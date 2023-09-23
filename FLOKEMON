@@ -69,16 +69,16 @@ CREATE TABLE SalesTransactionDetail(
 -- Insert Data
 
 INSERT INTO Staff VALUES
-('ST001' , 'Julian Wijaya', 'julianwjy@jwlbx.com', '081386961893', 'Male', '5000000'),
-('ST002' , 'Wendy Lim', 'wendylim@yslim.com', '081389963093', 'Female', '4800000'),
-('ST003' , 'Vincent Susanto', 'vincentsusanto@yvfs.com', '08828853477893', 'Male', '4500000'),
-('ST004' , 'Danny Shelby', 'danshelby@shbly.com', '081254551194', 'Male', '5200000'),
-('ST005' , 'Gabriela Scarf', 'gabscarf@scrf.com', '085316601908', 'Female', '5000000'),
-('ST006' , 'Xavier Drewson', 'xavierdrewson@tsfl.com', '081356861893', 'Male', '5400000'),
-('ST007' , 'Jean Grey', 'jeangrey@gmhtl.com', '085689968878', 'Female', '4500000'),
-('ST008' , 'Alex Summers', 'alexsummers@msfd.com', '081388996876', 'Male', '5000000'),
-('ST009' , 'Aaron Lensheer', 'aaromlensheer@ghfv.com', '083377658223', 'Male', '4800000'),
-('ST010' , 'Jonathan Franz', 'jonathanfranz@ghkfl.com', '081384967857', 'Male', '5500000')
+('ST001', 'Julian Wijaya', 'julianwjy@jwlbx.com', '081386961893', 'Male', '5000000'),
+('ST002', 'Wendy Lim', 'wendylim@yslim.com', '081389963093', 'Female', '4800000'),
+('ST003', 'Vincent Susanto', 'vincentsusanto@yvfs.com', '08828853477893', 'Male', '4500000'),
+('ST004', 'Danny Shelby', 'danshelby@shbly.com', '081254551194', 'Male', '5200000'),
+('ST005', 'Gabriela Scarf', 'gabscarf@scrf.com', '085316601908', 'Female', '5000000'),
+('ST006', 'Xavier Drewson', 'xavierdrewson@tsfl.com', '081356861893', 'Male', '5400000'),
+('ST007', 'Jean Grey', 'jeangrey@gmhtl.com', '085689968878', 'Female', '4500000'),
+('ST008', 'Alex Summers', 'alexsummers@msfd.com', '081388996876', 'Male', '5000000'),
+('ST009', 'Aaron Lensheer', 'aaromlensheer@ghfv.com', '083377658223', 'Male', '4800000'),
+('ST010', 'Jonathan Franz', 'jonathanfranz@ghkfl.com', '081384967857', 'Male', '5500000')
 
 INSERT INTO Customer VALUES 
 ('CU001', 'Budi Santoso', '081324546776', 'Male',  'Budi27@gmail.com'),
@@ -226,7 +226,7 @@ INSERT INTO SalesTransactionDetail VALUES
 ('SA015', 'FL010', 3),
 ('SA015', 'FL003', 8)
 
--- 1.	Display CustomerName, StaffName, and Total Transaction (obtained from the total of sales transaction) for each customer whose name contains character �a� and transaction happened in 2020.
+-- 1.	Display CustomerName, StaffName, and Total Transaction (obtained from the total of sales transaction) for each customer whose name contains character 'a' and transaction happened in 2020.
 
 SELECT
     CustomerName,
@@ -256,7 +256,7 @@ WHERE LEN(FlokemonName) > 5
 AND FlokemonTypeName LIKE '%a%'
 GROUP BY FlokemonName, FlokemonTypeName
 
--- 3.	Display FlokemonTypeName, and Average Price (obtained from average flokemon price and start with �Rp. �), Total Sales Flokemon (obtained from the sum of sold flokemon quantity) for FlokemonTypeName start with character 'p' and have damage more than 1000. Display the data in ascending order.
+-- 3.	Display FlokemonTypeName, and Average Price (obtained from average flokemon price and start with 'Rp. '), Total Sales Flokemon (obtained from the sum of sold flokemon quantity) for FlokemonTypeName start with character 'p' and have damage more than 1000. Display the data in ascending order.
 
 SELECT
     FlokemonTypeName,
@@ -272,7 +272,7 @@ AND FlokemonDamage > 1000
 GROUP BY FlokemonTypeName
 ORDER BY FlokemonTypeName ASC
 
--- 4.	Display CustomerName, Total Transaction (obtain from the total number of different flokemon bought in one transaction), and Total Flokemon Bought (obtained from total transaction quantity of the sales transaction) for every transaction that happened in October and Total Flokemon quantity more than 10 with each customer whose name contains character �a�.
+-- 4.	Display CustomerName, Total Transaction (obtain from the total number of different flokemon bought in one transaction), and Total Flokemon Bought (obtained from total transaction quantity of the sales transaction) for every transaction that happened in October and Total Flokemon quantity more than 10 with each customer whose name contains character 'a'.
 
 SELECT
     CustomerName,
@@ -308,7 +308,7 @@ ON st.StaffID = s.StaffID,
 WHERE StaffSalary > AsAvgSalary.Average
 AND DATENAME(MONTH, SalesTransactionDate) = 'February'
 
--- 6.	Display StaffName (obtained from upper case format of StaffName), FlokemonName, Transaction Year (obtained from the year of transaction date) for each transaction that has a transaction quantity more than the average of all the transaction quantity in 2018 and staff whose name contain character �s�. (alias subquery)
+-- 6.	Display StaffName (obtained from upper case format of StaffName), FlokemonName, Transaction Year (obtained from the year of transaction date) for each transaction that has a transaction quantity more than the average of all the transaction quantity in 2018 and staff whose name contain character 's'. (alias subquery)
 
 SELECT
     [StaffName] = UPPER(s.StaffName),
