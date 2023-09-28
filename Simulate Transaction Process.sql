@@ -1,9 +1,4 @@
 -- Final Project Intro DB Lab
--- GROUP 5:
--- 2502036003 - Kelly
--- 2502039926 - Maura Pramesti Prasetyo
--- 2502040190 - Muhammad Julian
--- 2540135220 - Runna Aurelia
 
 -- Simulate Transaction Process
 
